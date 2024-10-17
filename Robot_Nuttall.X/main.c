@@ -11,6 +11,7 @@
 #include "ChipConfig.h"
 #include "IO.h"
 #include "timer.h"
+#include "PWM.h"
 
 int main (void){
     
@@ -18,6 +19,8 @@ int main (void){
         InitTimer1();
         InitTimer23();
         InitIO();
+        InitPWM();
+        
         
         LED_BLANCHE_1 = 0 ;
         LED_BLEUE_1 = 0;
