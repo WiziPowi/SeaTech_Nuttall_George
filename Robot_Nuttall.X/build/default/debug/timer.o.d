@@ -1,4 +1,5 @@
-build/default/debug/timer.o: timer.c timer.h IO.h PWM.h robot.h
+build/default/debug/timer.o: timer.c timer.h IO.h PWM.h robot.h ADC.h \
+ main.h
 
 timer.h:
 
@@ -7,3 +8,7 @@ IO.h:
 PWM.h:
 
 robot.h:
+
+ADC.h:
+
+main.h:
