@@ -5,7 +5,7 @@
 #include "Toolbox.h"
 
 #define PWMPER 24.0
-#define acceleration 1
+#define acceleration 50
 
 void InitPWM(void) {
     PTCON2bits.PCLKDIV = 0b000; //Divide by 1
@@ -85,6 +85,6 @@ void PWMSetSpeedConsigne(float vitesseEnPourcents, unsigned char Moteur) {
         robotState.vitesseDroiteConsigne = vitesseEnPourcents;
     }
     if (Moteur == MOTEUR_GAUCHE) {
-        robotState.vitesseGaucheConsigne = vitesseEnPourcents;
+        robotState.vitesseGaucheConsigne = -vitesseEnPourcents;
     }
 }

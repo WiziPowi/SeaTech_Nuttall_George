@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/debug/Robot_Nuttall.X.debug.elf">
+  <executable name="dist/default/production/Robot_Nuttall.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>53248</length>
-      <used>142</used>
-      <free>53106</free>
+      <used>62</used>
+      <free>53186</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>524544</length>
-      <used>8268</used>
-      <free>516276</free>
+      <used>8319</used>
+      <free>516225</free>
     </memory>
   </executable>
 </project>

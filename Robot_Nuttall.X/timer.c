@@ -13,7 +13,7 @@ unsigned char toggle = 0;
 void InitTimer1(void) {
     //Timer1 pour horodater les mesures (1ms)
     T1CONbits.TON = 0; // Disable Timer
-    SetFreqTimer1(2.5);
+    SetFreqTimer1(2000);
     T1CONbits.TCS = 0; //clock source = internal clock
     IFS0bits.T1IF = 0; // Clear Timer Interrupt Flag
     IEC0bits.T1IE = 1; // Enable Timer interrupt
@@ -24,7 +24,6 @@ void InitTimer1(void) {
 //Interruption du timer 1
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
-    LED_BLANCHE_1 = !LED_BLANCHE_1;
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
 }
@@ -50,15 +49,15 @@ void InitTimer23(void) {
 
 void __attribute__((interrupt, no_auto_psv)) _T3Interrupt(void) {
     IFS0bits.T3IF = 0; // Clear Timer3 Interrupt Flag
-    if (toggle == 0) {
-        PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-        PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
-        toggle = 1;
-    } else {
-        PWMSetSpeedConsigne(-0, MOTEUR_DROIT);
-        PWMSetSpeedConsigne(-0, MOTEUR_GAUCHE);
-        toggle = 0;
-    }
+//    if (toggle == 0) {
+//        PWMSetSpeedConsigne(0, MOTEUR_DROIT);
+//        PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+//        toggle = 1;
+//    } else {
+//        PWMSetSpeedConsigne(-0, MOTEUR_DROIT);
+//        PWMSetSpeedConsigne(-0, MOTEUR_GAUCHE);
+//        toggle = 0;
+//    }
 }
 
 void InitTimer4(void) {
@@ -74,7 +73,7 @@ void InitTimer4(void) {
 void __attribute__((interrupt, no_auto_psv)) _T4Interrupt(void) {
     IFS1bits.T4IF = 0;
     timestamp += 1;
-    LED_ORANGE_1 = !LED_ORANGE_1;
+    OperatingSystemLoop();
 }
 
 
