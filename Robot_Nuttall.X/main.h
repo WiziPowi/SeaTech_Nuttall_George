@@ -28,6 +28,8 @@
 #define OBSTACLE_A_GAUCHE 1
 #define OBSTACLE_A_DROITE 2
 #define OBSTACLE_EN_FACE 3
+#define OBSTACLE_EXTR_GAUCHE 1
+#define OBSTACLE_EXTR_DROITE 1
 
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode(void);
