@@ -223,8 +223,10 @@ void SetNextRobotStateInAutomaticMode() {
 #include "IO.h"
 #include "timer.h"
 #include "PWM.h"
+#include "ADC.h"
+#include "robot.h"
+#include "main.h"
 
-<<<<<<< HEAD
 unsigned int valueGauche;
 unsigned int valueCentre;
 unsigned int valueDroite;
@@ -358,29 +360,3 @@ void SetNextRobotStateInAutomaticMode() {
         stateRobot = nextStateRobot;
 }
 >>>>>>> parent of 9553ede (Séance finale finale bendo)
-=======
-int main (void){
-    
-        InitOscillator();
-        InitTimer1();
-        InitTimer23();
-        InitIO();
-        InitPWM();
-        
-        
-        LED_BLANCHE_1 = 0 ;
-        LED_BLEUE_1 = 0;
-        LED_ORANGE_1 = 0;
-        LED_ROUGE_1 = 0;
-        LED_VERTE_1 = 0;
-        LED_BLANCHE_2 = 0;
-        LED_BLEUE_2 = 0;
-        LED_ORANGE_2 = 0;
-        LED_ROUGE_2 = 0;
-        LED_VERTE_2 = 0;
-        
-        while(1)
-        {
-        } // fin main
-        }
->>>>>>> parent of 2493ede (fin code pdf presque)

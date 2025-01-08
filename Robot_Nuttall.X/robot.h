@@ -8,14 +8,11 @@ float vitesseGaucheConsigne;
 float vitesseGaucheCommandeCourante;
 float vitesseDroiteConsigne;
 float vitesseDroiteCommandeCourante;
-<<<<<<< HEAD
 float distanceTelemetreGauche;
 float distanceTelemetreExtrGauche;
 float distanceTelemetreDroit;
 float distanceTelemetreExtrDroit;
 float distanceTelemetreCentre;
-=======
->>>>>>> parent of 2493ede (fin code pdf presque)
 };
 };
 } ROBOT_STATE_BITS;

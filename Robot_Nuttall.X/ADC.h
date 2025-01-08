@@ -1,23 +1,18 @@
-/* 
- * File:   ADC.h
- * Author: TABLE 6
- *
- * Created on 17 octobre 2024, 12:20
- */
-
 #ifndef ADC_H
 #define	ADC_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-
-
-
-#ifdef	__cplusplus
-}
-#endif
-
+void InitADC1(void)
+;
+void __attribute__((interrupt, no_auto_psv)) _AD1Interrupt(void)
+;
+void ADC1StartConversionSequence()
+;
+unsigned int * ADCGetResult(void)
+;
+unsigned char ADCIsConversionFinished(void)
+;
+void ADCClearConversionFinishedFlag(void)
+;
+ 
 #endif	/* ADC_H */
 
