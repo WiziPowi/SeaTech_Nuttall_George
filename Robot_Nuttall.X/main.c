@@ -48,7 +48,7 @@ int main(void) {
             unsigned int * result = ADCGetResult();
             float volts = ((float) result [0])* 3.3 / 4096;
             robotState.distanceTelemetreExtrGauche = 34 / volts - 5;
-            float volts = ((float) result [1])* 3.3 / 4096;
+            volts = ((float) result [1])* 3.3 / 4096;
             robotState.distanceTelemetreGauche = 34 / volts - 5;
             volts = ((float) result [2])* 3.3 / 4096;
             robotState.distanceTelemetreCentre = 34 / volts - 5;
@@ -108,8 +108,8 @@ void OperatingSystemLoop(void) {
                 stateRobot = STATE_AVANCE;
             break;
         case STATE_AVANCE:
-            PWMSetSpeedConsigne(25, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(25, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(30, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(30, MOTEUR_GAUCHE);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
         case STATE_AVANCE_EN_COURS:
@@ -148,8 +148,8 @@ void OperatingSystemLoop(void) {
             SetNextRobotStateInAutomaticMode();
             break;
         case STATE_RECULE:
-            PWMSetSpeedConsigne(-30, MOTEUR_DROIT);
-            PWMSetSpeedConsigne(-30, MOTEUR_GAUCHE);
+            PWMSetSpeedConsigne(-15, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(13, MOTEUR_GAUCHE);
             stateRobot = STATE_RECULE_EN_COURS;
             break;
         case STATE_RECULE_EN_COURS:
@@ -168,7 +168,7 @@ void SetNextRobotStateInAutomaticMode() {
     if (robotState.distanceTelemetreDroit < 15 &&
             robotState.distanceTelemetreGauche < 15)
         positionObstacle = OBSTACLE_EN_FACE;
-    else if (robotState.distanceTelemetreCentre < 20)
+    else if (robotState.distanceTelemetreCentre < 25)
         positionObstacle = OBSTACLE_EN_FACE;
     
     else if (robotState.distanceTelemetreExtrGauche < 20)
