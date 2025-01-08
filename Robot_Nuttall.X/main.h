@@ -32,7 +32,7 @@
 #define OBSTACLE_EXTR_DROITE 1
 
 void OperatingSystemLoop(void);
-void SetNextRobotStateInAutomaticMode(void);
+void SetNextRobotStateInAutomaticMode();
 
 #endif	/* MAIN_H */
 
