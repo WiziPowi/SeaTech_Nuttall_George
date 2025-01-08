@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <xc.h>
 #include "adc.h"
 unsigned char ADCResultIndex = 0;
@@ -86,3 +87,6 @@ unsigned char ADCIsConversionFinished(void) {
 void ADCClearConversionFinishedFlag(void) {
     ADCConversionFinishedFlag = 0;
 }
+=======
+
+>>>>>>> parent of 2493ede (fin code pdf presque)
